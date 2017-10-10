@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 8.1.2
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+  pre:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+  override:
+    - yarn
+  cache_directories:
+    - ~/.yarn
+
+test:
+  override:
+    - yarn ci
