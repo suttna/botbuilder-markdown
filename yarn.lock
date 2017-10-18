@@ -1061,6 +1061,10 @@ html-encoding-sniffer@^1.0.1:
   dependencies:
     whatwg-encoding "^1.0.1"
 
+html-to-markdown@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/html-to-markdown/-/html-to-markdown-1.0.0.tgz#53acd37fbddd85b579307296a63c529dd2d82369"
+
 http-signature@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/http-signature/-/http-signature-1.1.1.tgz#df72e267066cd0ac67fb76adf8e134a8fbcf91bf"
