@@ -26,9 +26,11 @@
     "msteams"
   ],
   "dependencies": {
-    "botbuilder": "^3.9.1"
+    "botbuilder": "^3.9.1",
+    "html-to-markdown": "1.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^20.0.8",
     "codecov": "^2.3.0",
     "jest": "^21.1.0",
     "ts-jest": "^21.0.1",
