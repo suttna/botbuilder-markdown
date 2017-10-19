@@ -1,12 +1,12 @@
 import { IMessage, IMiddlewareMap } from "botbuilder"
 import { EventType } from "../interfaces"
-import { Parser } from "../lib/parser"
+import { Parser } from "../parser"
 
 export let textParserMiddleware: IMiddlewareMap = {
   receive: (event: IMessage, next: () => void) => {
     const parser = new Parser(event)
 
-    if (event.type === EventType.Messages) {
+    if (event.type === EventType.Message) {
       event.text = parser.convertTextToMarkdown()
     }
 
@@ -15,7 +15,7 @@ export let textParserMiddleware: IMiddlewareMap = {
   send: (event: IMessage, next: () => void) => {
     const parser = new Parser(event)
 
-    if (event.type === EventType.Messages) {
+    if (event.type === EventType.Message) {
       event.text = parser.parseMarkdown()
     }
 

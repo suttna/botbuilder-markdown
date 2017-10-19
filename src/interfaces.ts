@@ -7,7 +7,7 @@ export enum BotSource {
 }
 
 export enum EventType {
-  Messages = "messages",
+  Message = "message",
 }
 
 export interface IMarkdownParser {
