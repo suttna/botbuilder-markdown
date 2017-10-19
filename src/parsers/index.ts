@@ -1,7 +1,2 @@
-import SlackParser from "./slack_parser"
-import TeamsParser from "./teams_parser"
-
-export {
-  SlackParser,
-  TeamsParser,
-}
+export { SlackParser } from "./slack_parser"
+export { TeamsParser } from "./teams_parser"

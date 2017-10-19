@@ -1,7 +1,7 @@
 import { IMessage } from "botbuilder"
 import { IMarkdownParser } from "../interfaces"
 
-export default class SlackParser implements IMarkdownParser {
+export class SlackParser implements IMarkdownParser {
   public event: IMessage
 
   constructor(event: IMessage) {

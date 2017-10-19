@@ -1,8 +1,8 @@
 import { IMessage, IMiddlewareMap } from "botbuilder"
-import { EventType } from "../interfaces"
-import { Parser } from "../parser"
+import { EventType } from "./interfaces"
+import { Parser } from "./parser"
 
-export let textParserMiddleware: IMiddlewareMap = {
+export let markdownMiddleware: IMiddlewareMap = {
   receive: (event: IMessage, next: () => void) => {
     const parser = new Parser(event)
 

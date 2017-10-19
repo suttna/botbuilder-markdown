@@ -3,7 +3,7 @@ import * as htmlToMarkdown from "html-to-markdown"
 import { IMessage } from "botbuilder"
 import { IMarkdownParser } from "../interfaces"
 
-export default class TeamsParser implements IMarkdownParser {
+export class TeamsParser implements IMarkdownParser {
   public event: IMessage
 
   constructor(event: IMessage) {

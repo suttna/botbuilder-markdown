@@ -1,7 +1,7 @@
 import "jest"
 
 import { UniversalBot } from "botbuilder"
-import { loadMarkdownMiddleware } from "../../src/index"
+import { markdownMiddleware } from "../../src/index"
 import { BotSource } from "../../src/interfaces"
 
 import { BotTester } from "../support/bot_tester"
@@ -17,7 +17,7 @@ describe("TEAMS markdown middleware", () => {
     bot = new UniversalBot(connector)
     tester = new BotTester(bot).source(BotSource.Teams)
 
-    loadMarkdownMiddleware(bot)
+    bot.use(markdownMiddleware)
   })
 
   describe("when receiving a message", () => {
