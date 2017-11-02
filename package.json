@@ -1,6 +1,6 @@
 {
   "name": "botbuilder-markdown",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Adds a middleware that converts markdown to specific format for each channel.",
   "repository": "https://github.com/suttna/botbuilder-markdown",
   "author": "Santiago Doldan <santiagodolte@gmail.com>",

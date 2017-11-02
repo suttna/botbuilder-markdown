@@ -16,6 +16,8 @@ export class TeamsParser implements IMarkdownParser {
     if (markup) {
       let text = markup.content
 
+      // Remove \n|\r|\t
+      text = text.replace(/(\n|\r|\t)/gi, "")
       // Replace mentions span tags with <at> tag like botframework
       text = text.replace(/<span.+?itemtype=".+?Mention".*?>(.+?)<\/span>/gi, "<at>$1</at>")
       // Remove span tags
@@ -26,15 +28,16 @@ export class TeamsParser implements IMarkdownParser {
       text = text.replace(/&nbsp;/gi, " ")
       // Remove HTML entities
       text = text.replace(/(&.{1,4};)/gi, "")
+
       // Remove div attributes
       text = text.replace(/<div(\s.+?)>/gi, "")
       // Transform link into markdown links
       text = text.replace(/<a\s?.*?href=[{",'}](\S+)[{",'}].*?>(.*?)<\/a>/gi, "[$2]($1)")
 
-      // Replace divs with \n
-      if (text.search(/<div>.*<\/div>/) !== -1) {
-        text = text.match(/<div>(.+?)<\/div>/gi).join("\n").replace(/<div>|<\/div>/g, "")
-      }
+      // Add \n to div elements
+      text = text.replace(/(<div>.+?<\/div>)/gi, "$1\n")
+      // Add \n to li elements
+      text = text.replace(/(<li>.+?<\/li>)/gi, "$1\n")
 
       // Convert any left markup tag into markdown
       return htmlToMarkdown.convert(text)
@@ -46,6 +49,8 @@ export class TeamsParser implements IMarkdownParser {
   public parseMarkdown(): string {
     let text = this.event.text
 
+    // Use • for list bullets
+    text = text.replace(/^(?:\*( .*?\n))/gmi, "•$1")
     // Replace \n with <br />
     text = text.replace(/\n/gi, "<br />")
 
