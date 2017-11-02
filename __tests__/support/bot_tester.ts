@@ -46,12 +46,10 @@ export class BotTester {
       channelId: this.pSource,
       user: { id: "U1" },
       bot: { id: "B1" },
-    })
+    }).text(text)
 
     if (this.pSource === BotSource.Teams) {
       message.attachments([{ contentType: "text/html", content: text }])
-    } else {
-      message.text(text)
     }
 
     return message.toMessage()
