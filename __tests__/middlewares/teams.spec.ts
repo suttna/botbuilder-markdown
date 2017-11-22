@@ -43,7 +43,16 @@ describe("TEAMS markdown middleware", () => {
       /* tslint:enable:max-line-length */
 
       expect(await tester.receive(text))
-        .toBe("Text:\nTesting sample")
+        .toBe("Text:\nTesting sample\n")
+    })
+
+    it("handles pasted texts correctly", async () => {
+      /* tslint:disable:max-line-length */
+      const text = "<div itemprop=\"copy-paste-block\">This is a&nbsp;<span>sample of a pasted text</span></div>\n\n\r\n<div itemprop=\"copy-paste-block\">&nbsp;</div>\n\n\r\n<div itemprop=\"copy-paste-block\">And this is another pasted text</div>"
+      /* tslint:enable:max-line-length */
+
+      expect(await tester.receive(text))
+        .toBe("This is a sample of a pasted text\n \nAnd this is another pasted text\n")
     })
   })
 
