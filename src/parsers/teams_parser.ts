@@ -28,9 +28,9 @@ export class TeamsParser implements IMarkdownParser {
       text = text.replace(/(&.{1,4};)/gi, "")
 
       // Remove span attributes
-      text = text.replace(/<span(\s.+?)>/gi, "")
+      text = text.replace(/<span(\s.+?)>/gi, "<span>")
       // Remove div attributes
-      text = text.replace(/<div(\s.+?)>/gi, "")
+      text = text.replace(/<div(\s.+?)>/gi, "<div>")
       // Transform link into markdown links
       text = text.replace(/<a\s?.*?href=[{",'}](\S+)[{",'}].*?>(.*?)<\/a>/gi, "[$2]($1)")
 
