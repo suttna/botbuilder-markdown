@@ -20,8 +20,6 @@ export class TeamsParser implements IMarkdownParser {
       text = text.replace(/(\n|\r|\t)/gi, "")
       // Replace mentions span tags with <at> tag like botframework
       text = text.replace(/<span.+?itemtype=".+?Mention".*?>(.+?)<\/span>/gi, "<at>$1</at>")
-      // Remove span tags
-      text = text.replace(/(<span.*?>.*?<\/span>)/gi, "")
       // Remove img tags
       text = text.replace(/<img.+\/>/gi, "")
       // Replace HTML entities spaces
@@ -29,6 +27,8 @@ export class TeamsParser implements IMarkdownParser {
       // Remove HTML entities
       text = text.replace(/(&.{1,4};)/gi, "")
 
+      // Remove span attributes
+      text = text.replace(/<span(\s.+?)>/gi, "")
       // Remove div attributes
       text = text.replace(/<div(\s.+?)>/gi, "")
       // Transform link into markdown links
