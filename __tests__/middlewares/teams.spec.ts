@@ -36,6 +36,15 @@ describe("TEAMS markdown middleware", () => {
       expect(await tester.receive(text))
         .toBe("Text:\n* First item\n* Second item\n* \n")
     })
+
+    it("parses span tags with text correctly", async () => {
+      /* tslint:disable:max-line-length */
+      const text = "<div>Text:</div>\n\n<div itemprop=\"copy-paste-block\">Testing <span style=\"color:rgb(0,0,0)\">sample</span></div>"
+      /* tslint:enable:max-line-length */
+
+      expect(await tester.receive(text))
+        .toBe("Text:\nTesting sample")
+    })
   })
 
   describe("when sending a message", () => {
