@@ -1,8 +1,7 @@
 ![Logo](logo.png)
 
-# botbuilder-markdown [![npm version](https://badge.fury.io/js/botbuilder-markdown.svg)](https://badge.fury.io/js/botbuilder-markdown) [![CircleCI](https://circleci.com/gh/suttna/botbuilder-markdown.svg?style=svg)](https://circleci.com/gh/suttna/botbuilder-markdown) [![codecov](https://codecov.io/gh/suttna/botbuilder-markdown/branch/master/graph/badge.svg)](https://codecov.io/gh/suttna/botbuilder-markdown)
+# botbuilder-markdown [![npm version](https://badge.fury.io/js/botbuilder-markdown.svg)](https://badge.fury.io/js/botbuilder-markdown) [![CircleCI](https://circleci.com/gh/suttna/botbuilder-markdown.svg?style=svg)](https://circleci.com/gh/suttna/botbuilder-markdown) [![codecov](https://codecov.io/gh/suttna/botbuilder-markdown/branch/master/graph/badge.svg)](https://codecov.io/gh/suttna/botbuilder-markdown) [![Join the chat at https://gitter.im/suttna/botbuilder-markdown](https://badges.gitter.im/suttna/botbuilder-markdown.svg)](https://gitter.im/suttna/botbuilder-markdown?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Join the chat at https://gitter.im/suttna/botbuilder-markdown](https://badges.gitter.im/suttna/botbuilder-markdown.svg)](https://gitter.im/suttna/botbuilder-markdown?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ⚠️  **This is under development. If you want to help 🚀, please contact the Suttna team at opensource@suttna.om**
 
