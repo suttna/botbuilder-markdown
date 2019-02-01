@@ -28,7 +28,7 @@
     "msteams"
   ],
   "dependencies": {
-    "botbuilder": "^3.9.1",
+    "botbuilder": "^4.0.0",
     "html-to-markdown": "1.0.0"
   },
   "devDependencies": {
